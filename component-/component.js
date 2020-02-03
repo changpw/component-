@@ -7,9 +7,11 @@ Vue.component('input-text',{
 		}
 	},
 	template:`<input class='inputClass' type="text" :placeholder="placeHolderValue" @input="sendValue($event)"></input>`,
+	
 	methods:{
 		sendValue:function(e){
-			console.table(e.target.value)
+			// console.table(e.target.value)
+			this.$emit('get-value',e)
 		}
 	}
 })
